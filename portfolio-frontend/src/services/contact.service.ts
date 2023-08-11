@@ -1,6 +1,5 @@
 import { Nullable } from "../types";
 import { z, ZodError } from 'zod';
-import { authService } from "./auth.service";
 const errorSVG = '/images/error.svg';
 
 const contactSchema = z.object({
@@ -29,18 +28,7 @@ class ContactService {
   private _errorEl: Nullable<HTMLElement> = null;
 
   private sendContactMessage = async (formData: ContactForm) => {
-    const url = 'http://localhost:3000/emails/reachOut';
-    try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: authService.getDefaultHeaders(),
-        body: JSON.stringify(formData)
-      });
-      const data = await res.json();
-      console.log(data);
-    } catch (e) {
-      console.log('unable to send email: ', { e });
-    }
+    // TODO
   }
 
   private handleError = ({ message }: { message: string }) => {
@@ -108,12 +96,14 @@ class ContactService {
     this._form.addEventListener('submit', async (e) => {
       e.preventDefault();
       this.disposeError();
+
       const formData = this.getFormData();
       if (!formData) {
         return;
       }
-
       await this.sendContactMessage(formData);
+
+      this._form?.reset();
     })
   };
 
