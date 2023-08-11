@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+@layer base {
+  html { scroll-behavior: smooth; }
+  :root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    /* vars */
+    --shockwave-grid-width: 25;
+  }
+
+  body {
+    margin: 0;
+    /* min-width: 100vw;
+    min-height: 100vh; */
+
+    scroll-behavior: smooth;
+    @apply bg-[#1c1c1c] relative font-roboto flex flex-col;
+  }
+
+  .hero-text-header {
+    text-shadow: #d8b4fe 0px 4px 24px;
+    @apply text-4xl md:text-5xl text-white font-nicoMoji pointer-events-auto cursor-default select-none;
+  }
+
+  .hero-text-subheading {
+    text-shadow: rgba(255, 255, 255, 0.9) 0px 4px 24px;
+    @apply text-xl md:text-3xl text-white font-roboto pointer-events-auto cursor-default select-none mt-0 md:-mt-4
+  }
+
+  .card {
+    @apply max-w-md w-full p-6 bg-[#18181b] border border-[0.5px] border-slate-400 rounded-lg shadow;
+  }
+
+  .card>h5 {
+    @apply mt-2 text-lg md:text-xl font-semibold font-roboto text-white;
+  }
+
+  .card>p {
+    @apply mt-4 md:mt-8 self-end justify-self-end font-normal font-roboto text-white/60;
+  }
+
+  section.main {
+    @apply mx-auto max-w-7xl w-full h-screen scroll-smooth relative;
+  }
+
+  section>header>h1.heading {
+    text-shadow: rgba(255, 255, 255, 0.9) 0px 4px 24px;
+    @apply text-3xl md:text-4xl text-white font-roboto font-medium uppercase tracking-wide text-center;
+  }
+  section>header>h2.subheading {
+    @apply text-center text-lg md:text-xl mt-2 md:mt-4 text-white/80 font-normal font-roboto max-w-sm md:max-w-xl text-center
+  }
+
+  textarea, input.contact {
+    @apply font-roboto flex-1 flex px-4 py-2 bg-[#18181b] border border-[#a8b5ce] rounded-lg text-white mx-auto h-14 focus:ring-0 focus:outline-none focus:border-[#c084fc] focus:border;
+    min-width: 48%;
+  }
+
+  input.contact:focus, textarea.contact:focus {
+    box-shadow: 3px 3px 12px 0px rgba(255, 255, 255, 0.3);
+  }
+
+  /* shockwave css */
+  #shockwave-grid {
+    @apply grid w-fit;
+    grid-template-columns: repeat(var(--shockwave-grid-width), 1fr);
+    overflow-y: hidden;
+  }
+
+  .shockwave-dot {
+    @apply p-2 rounded-full transition-colors hover:bg-[#c084fc] focus:bg-blue-300 focus:bg-yellow-300 cursor-pointer hover:from-[#c084fc] hover:to-white
+  }
+
+  .shockwave-point {
+    @apply opacity-50 h-5 w-5 md:h-2 md:w-2 rounded-full bg-gradient-to-b from-slate-700 to-slate-400 opacity-50
+  }
+
+  /* CTAS */
+  button.cta {
+    background: linear-gradient(#2e2e2e, #2e2e2e) padding-box,
+      linear-gradient(261.3deg, #a8b5ce 31.51%, #c084fc 110.91%) border-box;
+    border-color: transparent;
+  }
+
+  button.cta:hover:enabled {
+    background: linear-gradient(#494949, #494949) padding-box,
+      linear-gradient(261.3deg, #a8b5ce 31.51%, #c084fc 110.91%) border-box;
+    border-color: transparent;
+    box-shadow: 3px 3px 12px 0px rgba(255, 255, 255, 0.3);
+  }
+
+  div.error {
+    @apply bg-[#2e2e2e] gap-x-2 text-center w-max top-1 md:top-0 left-1/2 -translate-x-1/2 absolute font-medium text-base text-[#fcd34d] border border-[#fcd34d] rounded-md flex py-2 px-4 items-center justify-center
+  }
+
+  img.error {
+    @apply h-5 w-5
+  }
+
+  /* Font Families */
+  
+  /* Roboto */
+  @font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/roboto/Roboto-Regular.ttf');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/fonts/roboto/Roboto-Medium.ttf');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/fonts/roboto/Roboto-Light.ttf');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/fonts/roboto/Roboto-Black.ttf');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'roboto';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/roboto/Roboto-Bold.ttf');
+    font-display: swap;
+  }
+
+  /* NicoMoji */
+  @font-face {
+    font-family: 'NicoMoji';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/nico-moji/NicoMoji-Regular.ttf');
+    font-display: swap;
+  }
+}
