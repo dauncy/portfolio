@@ -28,7 +28,8 @@ class ContactService {
   private _errorEl: Nullable<HTMLElement> = null;
 
   private sendContactMessage = async (formData: ContactForm) => {
-    // TODO
+    // TODO Post to backend
+    return formData
   }
 
   private handleError = ({ message }: { message: string }) => {
