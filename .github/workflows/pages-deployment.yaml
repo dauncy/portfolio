@@ -23,5 +23,6 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages publish --project-name=daniel-wilder-dev portfolio-frontend/dist
-          postCommands: rm -rf portfolio-frontend/dist
+          projectName: daniel-portfolio
+          directory: portfolio-frontend/dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
