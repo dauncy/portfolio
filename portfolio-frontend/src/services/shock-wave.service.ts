@@ -21,11 +21,11 @@ class ShockWave {
     }
 
     setTimeout(() => {
-      const random = Math.floor(Math.random() * (this._gridHeight * this._gridWidth / 1.5));
+      const random = Math.floor(Math.random() * 5);
       const autoClick = this.grid[random];
       const click = new Event('click');
       autoClick.dispatchEvent(click);
-    }, 500);
+    }, 50);
   }
 
   private handleCellClick = ({ cell }: { cell: HTMLDivElement }) => {
