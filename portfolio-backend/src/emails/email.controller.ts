@@ -12,7 +12,6 @@ export class EmailsController {
     @Body()
     { name, email, message }: { name: string; email: string; message: string },
   ) {
-    console.log('HELLOE');
     return await this.emailsService.createContactMessage({
       message,
       email,

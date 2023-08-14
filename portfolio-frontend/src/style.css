@@ -36,7 +36,7 @@
   }
 
   .card {
-    @apply max-w-md w-full p-6 bg-[#18181b] border border-[0.5px] border-slate-400 rounded-lg shadow;
+    @apply max-w-md w-full p-6 bg-[#18181b] border border-[0.5px] border-slate-400 rounded-lg shadow self-stretch;
   }
 
   .card>h5 {
@@ -48,7 +48,7 @@
   }
 
   section.main {
-    @apply mx-auto max-w-7xl w-full h-screen scroll-smooth relative;
+    @apply mx-auto max-w-7xl w-full scroll-smooth relative min-h-screen;
   }
 
   section>header>h1.heading {
@@ -105,6 +105,20 @@
     @apply h-5 w-5
   }
 
+  .toast-container {
+    @apply max-w-md  mx-4 shadow-lg z-[99] fixed top-1 -translate-x-1/2 left-1/2;
+  }
+  .toast {
+    @apply px-4 py-3 bg-white rounded-md flex gap-x-2
+  }
+
+  p.toast {
+    @apply font-bold font-roboto text-black opacity-80 text-lg;
+  }
+
+  .slide-in {
+
+  }
   /* Font Families */
   
   /* Roboto */
@@ -155,5 +169,58 @@
     font-weight: 400;
     src: url('/fonts/nico-moji/NicoMoji-Regular.ttf');
     font-display: swap;
+  }
+
+  .slide-in {
+    animation-name: slide-in;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+  }
+
+  .slide-out {
+    animation-name: slide-out;
+    animation-duration: 500ms;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+  }
+
+  @keyframes slide-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-3000px);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(25px)
+    }
+    75% {
+      transform: translateY(-10px)
+    }
+    90% {
+      transform: translateY(5px)
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes slide-out {
+    0% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    60% {
+      transform: translateY(5px)
+    }
+    75% {
+      transform: translateY(-10px)
+    }
+    90% {
+      transform: translateY(25px)
+    }
+    to {
+      transform: translateY(-3000px);
+    }
   }
 }
