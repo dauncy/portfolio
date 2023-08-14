@@ -12,7 +12,7 @@ export class MailService {
   }): string => {
     const NEW_PARAGRAPGH = '\n\n';
     const greeting = 'Hi';
-    const body = `I appreciate you taking the time to start a conversation.${NEW_PARAGRAPGH} I need a few days to review your message but I should get back to you shortly...`;
+    const body = `I appreciate you taking the time to start a conversation.${NEW_PARAGRAPGH} I should get back to you in a few days...`;
     const signOff = 'Thanks 🤙,\n Daniel Wilder';
     const context = `-----------\nYour Message:\n"${originalMessage}"`;
 
@@ -34,7 +34,7 @@ export class MailService {
     promises.push(
       this.mailerService.sendMail({
         to: email,
-        from: 'daniel@danielwilder.dev',
+        from: 'noreply: Daniel Wilder',
         subject: 'Thanks For Reaching Out',
         text: this.generateAutoReply({ originalMessage: text }),
         context: {
