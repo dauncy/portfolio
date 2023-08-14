@@ -12,8 +12,11 @@ RUN yarn
 
 COPY . .
 
-RUN yarn run build
-RUN yarn run prisma:deploy
+RUN --mount=type=secret,id=db_secret \
+    DATABASE_URL="$(cat /run/secrets/db_secret)" \
+        yarn run build \
+        && yarn run prisma:deploy \
+        && yarn run prisma:generate
 
 FROM node:16
 WORKDIR /app
