@@ -12,8 +12,8 @@ RUN yarn
 
 COPY . .
 
-RUN yarn run prisma:generate
 RUN yarn run build
+RUN yarn run prisma:deploy
 
 FROM node:16
 WORKDIR /app

@@ -1,0 +1,18 @@
+name: Fly Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+    - main
+    paths:
+    - 'portfolio-backend/**'
+jobs:
+  deploy:
+    name: Deploy Portfolio Backend
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: flyctl deploy --build-secret DATABASE_URL=${{ secrets.FLY_DB_URL }} --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
