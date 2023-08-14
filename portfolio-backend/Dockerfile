@@ -13,8 +13,8 @@ RUN yarn
 COPY . .
 
 RUN --mount=type=secret,id=db_secret \
-    DATABASE_URL="$(cat /run/secrets/db_secret)" \
-        yarn run build \
+    export DATABASE_URL="$(cat /run/secrets/db_secret)" \
+        && yarn run build \
         && yarn run prisma:deploy \
         && yarn run prisma:generate
 
