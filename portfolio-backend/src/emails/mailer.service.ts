@@ -47,7 +47,7 @@ export class MailService {
         to: 'daniel@danielwilder.dev',
         from: email,
         subject: 'Portfolio Email',
-        text: `${text}\n From, ${name}\n email: ${email}`,
+        text: `${text}\nFrom, ${name}\nemail: ${email}`,
         context: {
           name,
           email,
