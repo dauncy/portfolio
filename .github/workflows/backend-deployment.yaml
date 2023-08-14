@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: cd portfolio-backend && flyctl deploy --build-secret DATABASE_URL=${{ secrets.FLY_DB_URL }} --remote-only
+      - run: cd portfolio-backend && docker run -e DATABASE_URL=${{ secrets.FLY_DB_URL }} && flyctl deploy --build-secret DATABASE_URL=${{ secrets.FLY_DB_URL }} --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
