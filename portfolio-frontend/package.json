@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev:remote": "export BACKEND_URL=https://api.danielwilder.dev",
+    "dev:local": "export BACKEND_URL=http://localhost:3000 && vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -20,6 +21,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "tailwindcss-interaction-variants": "^5.0.0",
     "zod": "^3.21.4"
   }
 }

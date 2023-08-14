@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import { createHtmlPlugin } from 'vite-plugin-html';
 //@ts-ignore
 import { resolve } from 'path';
@@ -7,7 +7,7 @@ import { sanitizeDate, currentYear }from './src/utils/date.utils'
 
 // @ts-ignore
 export default defineConfig(({ mode }) => {
-
+  const env = loadEnv(mode, process.cwd(), '');
   const pageData = {
     lastUpdated: sanitizeDate(new Date()),
     copywriteYear: currentYear(),
@@ -31,6 +31,8 @@ export default defineConfig(({ mode }) => {
       }),
     ],
     define: {
+      BACKEND_URL: JSON.stringify(env.BACKEND_URL),
+      VISITOR_API_KEY: JSON.stringify(env.VISITOR_API_KEY),
     },
     base: '',
     server: {

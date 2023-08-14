@@ -32,6 +32,30 @@ export default {
       }
     },
   },
-  plugins: [],
+  variantOrder: [
+    'first',
+    'last',
+    'odd',
+    'even',
+    'visited',
+    'checked',
+    'group-hover',
+    'group-focus',
+    'focus-within',
+    'hover',
+    'focus',
+    'focus-visible',
+    'active',
+    'group-disabled', // Custom variant
+    'disabled',
+  ],
+  variants: {
+    extend: {
+      backgroundColor: ['group-disabled'],
+    }
+  },
+  plugins: [
+    require('tailwindcss-interaction-variants'),
+  ],
 }
 

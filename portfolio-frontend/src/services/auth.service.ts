@@ -12,7 +12,7 @@ class AuthService {
 
   public getDefaultHeaders = () => {
     return {
-      'X-API-KEY': 'TEST_API_KEY',
+      'X-API-KEY': VISITOR_API_KEY,
       'Content-Type': 'application/json',
     };
   }
