@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
       # Run your project's build step
       - name: Build
-        run: cd portfolio-frontend && yarn && export VISITOR_API_KEY=${{ secrets.BACKEND_VISITOR_API_KEY }} && yarn build
+        run: cd portfolio-frontend && yarn && export VISITOR_API_KEY=${{ secrets.BACKEND_VISITOR_API_KEY }} && yarn build && cd -
       - name: Publish
         uses: cloudflare/pages-action@1
         with:

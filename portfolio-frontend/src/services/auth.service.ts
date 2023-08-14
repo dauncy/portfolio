@@ -15,7 +15,7 @@ class AuthService {
       'X-API-KEY': VISITOR_API_KEY,
       'Content-Type': 'application/json',
     };
-  }
+  };
 }
 
 export const authService = AuthService.getInstance();
