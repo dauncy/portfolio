@@ -1,7 +1,8 @@
 FROM node:16 AS builder
 
 RUN --mount=type=secret,id=DATABASE_URL \
-  DATABASE_URL="$(cat /run/secrets/DATABASE_URL)"
+  DATABASE_URL="$(cat /run/secrets/DATABASE_URL)" \ 
+ENV DATABASE_URL=DATABASE_URL
 
 # Create app directory
 WORKDIR /app
