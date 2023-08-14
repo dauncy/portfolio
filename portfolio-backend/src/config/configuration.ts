@@ -1,6 +1,6 @@
 export default () => ({
   security: {
-    general_api_key: process.env.VISITOR_APPI_KEY,
+    general_api_key: process.env.VISITOR_API_KEY,
   },
   mailer: {
     smtpHost: process.env.MAIL_HOST,

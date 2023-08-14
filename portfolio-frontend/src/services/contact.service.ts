@@ -137,7 +137,7 @@ class ContactService {
         return;
       }
       const data = await this.sendContactMessage(formData);
-      if (data.status === 200) {
+      if (data && data?.status && data.status === 200) {
         toastService.toast('Message sent successfully!');
       }
       this._form?.reset();
