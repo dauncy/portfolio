@@ -1,9 +1,13 @@
 import { MailerService } from '@nestjs-modules/mailer';
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class MailService {
-  constructor(private mailerService: MailerService) {}
+  constructor(
+    private readonly mailerService: MailerService,
+    private readonly configService: ConfigService,
+  ) {}
 
   private generateAutoReply = ({
     originalMessage,
@@ -34,6 +38,7 @@ export class MailService {
     promises.push(
       this.mailerService.sendMail({
         to: email,
+        from: this.configService.get('mailer.smtpUser'),
         subject: 'Thanks For Reaching Out',
         text: this.generateAutoReply({ originalMessage: text }),
         context: {
