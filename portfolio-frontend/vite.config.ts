@@ -59,7 +59,3 @@ export default defineConfig(({ mode }) => {
     },
   };
 })
-
-function dateStr(arg0: number) {
-  throw new Error('Function not implemented.');
-}

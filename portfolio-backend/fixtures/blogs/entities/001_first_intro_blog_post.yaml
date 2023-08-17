@@ -1,0 +1,9 @@
+title: Introducing danielwilder.dev
+subtitle: BlahBlahBlah hello world foo bar
+featured: true
+private: false
+tags: 
+  - tech
+  - personal
+markdown: blog1.md
+slug: intro-to-blogging

@@ -27,3 +27,16 @@ model ContactMessage {
   Visitor   Visitor? @relation(fields: [visitorId], references: [id])
   visitorId String?
 }
+
+model Blog {
+  id           String     @id @default(uuid())
+  slug         String?     @unique
+  title        String     @unique
+  subtitle     String
+  tags         String[]
+  featured     Boolean
+  private      Boolean
+  markdown     String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}

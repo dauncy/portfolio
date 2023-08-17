@@ -6,16 +6,24 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2021",
+    "target": "ES2017",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
+    "allowJs": true,
+    "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@fixtures/*": ["./fixtures/*"]
+    }
   }
 }

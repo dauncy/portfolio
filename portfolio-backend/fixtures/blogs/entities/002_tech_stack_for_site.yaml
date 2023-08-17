@@ -1,0 +1,9 @@
+title: Explaining my tech stack
+subtitle: the goal is to demonstrate why i chose what i chose for my site's tech stack
+featured: true
+private: false
+tags: 
+  - tech
+  - personal
+markdown: blog2.md
+slug: my-second-blog

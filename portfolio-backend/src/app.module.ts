@@ -7,6 +7,7 @@ import * as path from 'path';
 import { ConfigModule } from '@nestjs/config';
 import { EmailsModule } from './emails/emails.module';
 import configuration from './config/configuration';
+import { BlogsModule } from './blogs/blogs.module';
 
 const NODE_ENV = process.env.NODE_ENV;
 const envPath = path.resolve(
@@ -25,6 +26,7 @@ const envPath = path.resolve(
     PrismaModule,
     VisitorsModule,
     EmailsModule,
+    BlogsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
