@@ -33,7 +33,7 @@ export default defineConfig(async ({ mode }) => {
     },
     {
       filename: `blog.html`,
-      template: `${__dirname}/pages/blogs/blog.html`,
+      template: `pages/blogs/blog.html`,
       injectOptions: {
         data: { blogs: allBlogs },
       }
