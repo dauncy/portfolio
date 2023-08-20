@@ -10,9 +10,7 @@ import fs from "fs";
 // @ts-ignore
 export default defineConfig(async ({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
-  fs.mkdir(`${__dirname}/pages/blogs/generated/`, () => {
-    console.log('output created')
-  })
+  
   const pageData = {
     lastUpdated: sanitizeDate(new Date()),
     copywriteYear: currentYear(),
@@ -34,7 +32,7 @@ export default defineConfig(async ({ mode }) => {
       }
     },
     {
-      filename: `blogs/index.html`,
+      filename: `blog.html`,
       template: `${__dirname}/pages/blogs/index.html`,
       injectOptions: {
         data: { blogs: allBlogs },
