@@ -79,8 +79,8 @@ export default defineConfig(async ({ mode }) => {
       rollupOptions: {
         input: {
           // ...rollupInput,
-          index: resolve(`${__dirname}`, 'pages/index.html'),
-          blog: resolve(`${__dirname}`, 'pages/blogs/blog.html'),
+          index: resolve(`${__dirname}`, 'index.html'),
+          blog: resolve(`${__dirname}`, '/blogs/blog.html'),
         },
       },
     },
