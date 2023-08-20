@@ -20,7 +20,7 @@ export default {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  content: ["./*html", "./src/**/*.ts"],
+  content: ["./*html", "./src/**/*.ts", "./pages/**/*.html"],
   theme: {
     extend: {
       fontFamily: {

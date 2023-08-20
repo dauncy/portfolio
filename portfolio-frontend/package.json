@@ -2,12 +2,13 @@
   "name": "danielwilder-portfolio",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "./src/main.ts",
   "scripts": {
     "dev:remote": "export BACKEND_URL=https://api.danielwilder.dev",
-    "dev:local": "export BACKEND_URL=http://localhost:3000 && vite --host",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "dev:local": "export BACKEND_URL=http://localhost:3000 && vite --host && yarn cleanup",
+    "build": "tsc && vite build && yarn cleanup",
+    "preview": "vite preview",
+    "cleanup": "rm -rf pages/blogs/generated/"
   },
   "devDependencies": {
     "@types/animejs": "^3.1.7",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "node-fetch": "^3.3.2",
     "tailwindcss-interaction-variants": "^5.0.0",
     "zod": "^3.21.4"
   }
