@@ -26,14 +26,14 @@ export default defineConfig(async ({ mode }) => {
   const pages: any[] = [
     {
       filename: `index.html`,
-      template: `${__dirname}/pages/index.html`,
+      template: `pages/index.html`,
       injectOptions: {
         data: pageData,
       }
     },
     {
       filename: `blog.html`,
-      template: `${__dirname}/pages/blogs/index.html`,
+      template: `${__dirname}/pages/blogs/blog.html`,
       injectOptions: {
         data: { blogs: allBlogs },
       }
@@ -76,13 +76,13 @@ export default defineConfig(async ({ mode }) => {
       base: '.',
       sourcemap: true,
       chunkSizeWarningLimit: 1024,
-      // rollupOptions: {
-      //   input: {
-      //     // ...rollupInput,
-      //     index: resolve(`${__dirname}`, 'pages/index.html'),
-      //     blog: resolve(`${__dirname}`, 'pages/blogs/blog.html'),
-      //   },
-      // },
+      rollupOptions: {
+        input: {
+          // ...rollupInput,
+          index: resolve(`${__dirname}`, 'pages/index.html'),
+          blog: resolve(`${__dirname}`, 'pages/blogs/blog.html'),
+        },
+      },
     },
     esbuild: {
       treeShaking: true,
