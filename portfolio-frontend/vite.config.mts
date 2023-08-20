@@ -6,6 +6,7 @@ import { sanitizeDate, currentYear }from './src/utils/date.utils';
 import { blogsService } from './src/services/blogs.service';
 import fetch from "node-fetch";
 import fs from "fs";
+import { fileURLToPath } from 'url'
 
 // @ts-ignore
 export default defineConfig(async ({ mode }) => {
@@ -32,8 +33,8 @@ export default defineConfig(async ({ mode }) => {
       }
     },
     {
-      filename: `blog.html`,
-      template: `pages/blogs/blog.html`,
+      filename: `/blogs/index.html`,
+      template: `pages/blogs/index.html`,
       injectOptions: {
         data: { blogs: allBlogs },
       }
@@ -79,8 +80,8 @@ export default defineConfig(async ({ mode }) => {
       rollupOptions: {
         input: {
           // ...rollupInput,
-          index: resolve(`${__dirname}`, 'index.html'),
-          blog: resolve(`${__dirname}`, '/blogs/blog.html'),
+          index: fileURLToPath(new URL('./pages/index.html', import.meta.url)),
+          blog: fileURLToPath(new URL('./pages/blogs/index.html', import.meta.url)),
         },
       },
     },
