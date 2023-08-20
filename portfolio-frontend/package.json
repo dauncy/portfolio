@@ -8,7 +8,7 @@
     "dev:local": "export BACKEND_URL=http://localhost:3000 && vite --host && yarn cleanup",
     "build": "tsc && vite build && yarn cleanup",
     "preview": "vite preview",
-    "cleanup": "rm -rf pages/blogs/generated/"
+    "cleanup": "echo ''CLEAN_UP"
   },
   "devDependencies": {
     "@types/animejs": "^3.1.7",

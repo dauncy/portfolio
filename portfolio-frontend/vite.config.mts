@@ -75,7 +75,7 @@ export default defineConfig(async ({ mode }) => {
       port: 4080,
     },
     build: {
-      base: './pages',
+      base: '.',
       sourcemap: true,
       chunkSizeWarningLimit: 1024,
       // rollupOptions: {
