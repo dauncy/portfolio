@@ -7,4 +7,7 @@ export default () => ({
     smtpUser: process.env.SMTP_USERNAME,
     smtpPassword: process.env.SMTP_PASSWORD,
   },
+  postmark: {
+    apiKey: process.env.POSTMARK_API_KEY,
+  },
 });

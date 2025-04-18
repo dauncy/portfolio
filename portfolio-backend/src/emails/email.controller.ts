@@ -12,10 +12,7 @@ export class EmailsController {
     @Body()
     { name, email, message }: { name: string; email: string; message: string },
   ) {
-    return await this.emailsService.createContactMessage({
-      message,
-      email,
-      name,
-    });
+    await this.emailsService.sendEmail({ email, name, message });
+    return { status: 200, message: 'Email sent!' };
   }
 }

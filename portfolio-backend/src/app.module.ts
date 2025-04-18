@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { PrismaModule } from './prisma/prisma.module';
-import { VisitorsModule } from './visitors/visitors.module';
 import * as path from 'path';
 import { ConfigModule } from '@nestjs/config';
 import { EmailsModule } from './emails/emails.module';
@@ -22,8 +20,6 @@ const envPath = path.resolve(
       envFilePath: envPath,
       cache: true,
     }),
-    PrismaModule,
-    VisitorsModule,
     EmailsModule,
   ],
   controllers: [AppController],
