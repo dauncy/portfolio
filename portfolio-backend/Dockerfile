@@ -18,13 +18,13 @@ WORKDIR /app
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/scripts ./scripts
 
 ENV NODE_ENV=production
-COPY --chown=node:node . .
 ENV PORT 3000
 ENV ADDRESS "0.0.0.0"
 EXPOSE 3000
 EXPOSE 3001
 USER node
-CMD [ "yarn", "run", "start:prod" ]
+
+# Change this line to use the correct path
+CMD [ "node", "dist/main.js" ]
