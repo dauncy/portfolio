@@ -32,7 +32,7 @@ export class EmailsService {
               font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
               line-height: 1.6;
               color: #333333;
-              max-width: 380px;
+              max-width: 600px;
               margin: 0 auto;
               padding: 20px;
               background-color: #ededed;
